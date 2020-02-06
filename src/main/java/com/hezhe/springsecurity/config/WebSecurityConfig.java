@@ -39,13 +39,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/r/**").authenticated()//   这个路径/r/**下的都需要认证才可以访问
                 .anyRequest().permitAll() //  除/r/**这个以为其他的都可以访问
                 .and()
-                    .formLogin() //允许表单登录
-                    .loginPage("/") //进入登录页面
-                    .loginProcessingUrl("/login") //登录表单提交的请求路径，自动进行登录认证
-                    .successForwardUrl("/success") //自定义登录成功页面
+                .formLogin() //允许表单登录
+                .loginPage("/") //进入登录页面
+                .loginProcessingUrl("/login") //登录表单提交的请求路径，自动进行登录认证
+                .successForwardUrl("/success") //自定义登录成功页面
                 .and()
-                    .logout()
-                    .logoutUrl("/logout") //springsecurity登出路径
-                    .logoutSuccessUrl("/");  //退出以后进入到登录页面（自定义）
+                .logout()
+                .logoutUrl("/logout") //springsecurity登出路径
+                .logoutSuccessUrl("/");  //退出以后进入到登录页面（自定义）
     }
 }
